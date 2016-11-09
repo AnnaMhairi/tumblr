@@ -1,2 +1,7 @@
 <h1>Home#main</h1>
 <p>Find me in app/views/home/main.html.erb</p>
+<% @posts.each do |post| %>
+<ul>
+  <li><%= post %></li>
+</ul>
+<% end %>
