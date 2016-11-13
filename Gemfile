@@ -8,6 +8,8 @@ gem 'pg'
 
 gem 'responders', '~> 2.0'
 
+gem 'json'
+
 gem 'tumblr_client'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'

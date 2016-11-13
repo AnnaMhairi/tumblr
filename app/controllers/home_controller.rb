@@ -1,5 +1,7 @@
 class HomeController < ApplicationController
   require 'tumblr_interface'
+  require 'net/http'
+  require 'json'
 
   def main
     @tumblr_client = self.client
@@ -11,7 +13,18 @@ class HomeController < ApplicationController
     tag_term = params[:tagsearch]
 
     if search_term.present? && tag_term.present?
-      puts 'hello'
+      url = URI.parse("https://api.tumblr.com/v2/blog/#{search_term}/posts?tag=#{tag_term}&api_key=#{client.credentials[:consumer_key]}")
+      http = Net::HTTP.new(url.host, url.port)
+      http.use_ssl = true if url.scheme == 'https'
+      http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+
+      response = http.start do |h|
+        h.request Net::HTTP::Get.new(url.request_uri)
+      end
+
+      puts response
+
+      @tag_posts = JSON.parse(response.body)
     elsif search_term.present?
       @posts = client.posts search_term
     elsif tag_term.present?

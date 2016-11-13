@@ -1,0 +1,10 @@
+<ul>
+  <% @tag_posts["response"]["posts"].each do |tag_post| %>
+    <li data-id="<%= tag_post['id'] %>">
+      <span class="post-info">
+        <%= tag_post['summary'] %>
+      </span>
+      <input type="button" value="Add" class="addFavorite">
+    </li>
+  <% end %>
+</ul>
