@@ -1,8 +1,8 @@
 <ul>
-  <% @posts['posts'].each do |post| %>
-    <li data-id="<%= post['id'] %>">
+  <% @tags.each do |tag| %>
+    <li data-id="<%= tag['id'] %>">
       <span class="post-info">
-        <%= post['summary'] %>
+        <%= tag['summary'] %>
       </span>
       <input type="button" value="Add" class="addFavorite">
     </li>

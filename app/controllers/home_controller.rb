@@ -8,7 +8,16 @@ class HomeController < ApplicationController
   def search
     client = self.client
     search_term = params[:blogsearch]
-    @posts = client.posts search_term
+    tag_term = params[:tagsearch]
+
+    if search_term.present? && tag_term.present?
+      puts 'hello'
+    elsif search_term.present?
+      @posts = client.posts search_term
+    elsif tag_term.present?
+      @tags = client.tagged tag_term
+    end
+
     respond_to do |format|
       format.html
       format.js {}

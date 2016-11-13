@@ -1,1 +1,5 @@
-$(".search-results-container").append("<%= escape_javascript("#{render :partial => 'posts', :locals => { :posts => @posts }}").html_safe %>")
+<% if @posts.present? %>
+    $(".search-results-container").append("<%= escape_javascript("#{render :partial => 'posts', :locals => { :posts => @posts }}").html_safe %>")
+<% elsif @tags.present? %>
+    $(".search-results-container").append("<%= escape_javascript("#{render :partial => 'tags', :locals => { :tags => @tags }}").html_safe %>")
+<% end %>
