@@ -1,4 +1,4 @@
-<ul>
+<ul class="post-search-results">
   <% @tags.each do |tag| %>
     <li data-id="<%= tag['id'] %>">
       <span class="post-info">
@@ -7,7 +7,7 @@
           <%= raw tag['title'] %></br>
           <%= raw tag['body'] %>
         <% elsif tag['type'] == 'quote' %>
-          <%= tag['text'] %>
+          <%= raw tag['text'] %>
         <% elsif tag['type'] == 'link' %>
           <a href="<%= tag['url'] %>">
             <%= tag['title'] %>
@@ -24,7 +24,7 @@
           <%= tag['body'] %>
         <% end %>
       </span>
-      <input type="button" value="Add" class="addFavorite">
+      <input type="button" value="Add" class="add-favorite">
     </li>
   <% end %>
 </ul>

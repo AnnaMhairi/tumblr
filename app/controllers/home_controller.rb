@@ -22,8 +22,6 @@ class HomeController < ApplicationController
         h.request Net::HTTP::Get.new(url.request_uri)
       end
 
-      puts response
-
       @tag_posts = JSON.parse(response.body)
     elsif search_term.present?
       @posts = client.posts search_term

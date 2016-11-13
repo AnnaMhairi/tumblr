@@ -1,3 +1,61 @@
 // Place all the styles related to the Home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+  display: flex;
+  flex-direction: row;
+}
+
+.search-section {
+  border-right: 1px solid black;
+  flex-basis: 50%;
+}
+
+.search-container {
+  border-bottom: 1px solid black;
+}
+
+.favorites-container {
+  flex-basis: 50%;
+}
+
+#search-form {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.blog-name, .tag-name, .submit {
+  flex-basis: 50%;
+}
+
+.submit {
+  margin-top: 15px;
+}
+
+.search-results-container, .favorites-results-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.search-results-container li, .favorites-results-container li {
+  border: 1px solid black;
+  display: flex;
+  flex-direction: row;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.post-info, .favorite-info {
+  flex-basis: 75%;
+}
+
+.add-favorite, .remove-favorite {
+  flex-basis: 25%;
+}

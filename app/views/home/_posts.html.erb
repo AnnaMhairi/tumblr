@@ -1,4 +1,4 @@
-<ul>
+<ul class="post-search-results">
   <% @posts['posts'].each do |post| %>
     <li data-id="<%= post['id'] %>">
       <span class="post-info">
@@ -7,7 +7,7 @@
           <%= raw post['title'] %></br>
           <%= raw post['body'] %>
         <% elsif post['type'] == 'quote' %>
-          <%= post['text'] %>
+          <%= raw post['text'] %>
         <% elsif post['type'] == 'link' %>
           <a href="<%= post['url'] %>">
             <%= post['title'] %>
@@ -24,7 +24,7 @@
           <%= post['body'] %>
         <% end %>
       </span>
-      <input type="button" value="Add" class="addFavorite">
+      <input type="button" value="Add" class="add-favorite">
     </li>
   <% end %>
 </ul>

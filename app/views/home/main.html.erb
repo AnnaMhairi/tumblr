@@ -1,21 +1,29 @@
-<div class="search-container">
-  <%= form_tag search_home_index_path, method: :post, remote: true, :id => 'search-form', :format => :js do %>
-    <h4>Blog Name:</h4>
-    <%= text_field_tag :blogsearch %><br>
-    <h4>Tag:</h4>
-    <%= text_field_tag :tagsearch %><br>
-    <%= submit_tag "Submit" %>
-  <% end %>
-</div>
+<div class="search-section">
+  <div class="search-container">
+    <%= form_tag search_home_index_path, method: :post, remote: true, :id => 'search-form', :format => :js do %>
+      <div class="blog-name">
+        <h4>Blog Name:</h4>
+        <%= text_field_tag :blogsearch %><br>
+      </div>
+      <div class="tag-name">
+        <h4>Tag:</h4>
+        <%= text_field_tag :tagsearch %><br>
+      </div>
+      <div class="submit">
+        <%= submit_tag "Submit" %>
+      </div>
+    <% end %>
+  </div>
 
-<div class="search-results-container">
+  <div class="search-results-container">
+  </div>
 </div>
 
 <div class="favorites-container">
-  <ul>
-    <li>
-      <input type="button" value="Remove">
-    </li>
-  </ul>
+  <h2 class="favorites-heading">Favorites:</h2>
+  <div class="favorites-results-container">
+    <ul>
+    </ul>
+  </div>
 </div>
 
