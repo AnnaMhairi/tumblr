@@ -2,7 +2,27 @@
   <% @posts['posts'].each do |post| %>
     <li data-id="<%= post['id'] %>">
       <span class="post-info">
-        <%= post['summary'] %>
+        <%= post['type'] %></br>
+        <% if post['type'] == 'text' %>
+          <%= raw post['title'] %></br>
+          <%= raw post['body'] %>
+        <% elsif post['type'] == 'quote' %>
+          <%= post['text'] %>
+        <% elsif post['type'] == 'link' %>
+          <a href="<%= post['url'] %>">
+            <%= post['title'] %>
+          </a>
+        <% elsif post['type'] == 'answer' %>
+          <%= post['answer'] %>
+        <% elsif post['type'] == 'video' %>
+          <%= raw post['player'][1]['embed_code'] %>
+        <% elsif post['type'] == 'audio' %>
+          <%= raw CGI.unescapeHTML(post['embed']) %>
+        <% elsif post['type'] == 'photo' %>
+          <img src=<%= post['photos'].first['alt_sizes'][2]['url'] %> />
+        <% elsif post['type'] == 'chat' %>
+          <%= post['body'] %>
+        <% end %>
       </span>
       <input type="button" value="Add" class="addFavorite">
     </li>

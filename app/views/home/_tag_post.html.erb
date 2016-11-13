@@ -2,7 +2,27 @@
   <% @tag_posts["response"]["posts"].each do |tag_post| %>
     <li data-id="<%= tag_post['id'] %>">
       <span class="post-info">
-        <%= tag_post['summary'] %>
+        <%= tag_post['type'] %></br>
+        <% if tag_post['type'] == 'text' %>
+          <%= raw tag_post['title'] %></br>
+          <%= raw tag_post['body'] %>
+        <% elsif tag_post['type'] == 'quote' %>
+          <%= tag_post['text'] %>
+        <% elsif tag_post['type'] == 'link' %>
+          <a href="<%= tag_post['url'] %>">
+            <%= tag_post['title'] %>
+          </a>
+        <% elsif tag_post['type'] == 'answer' %>
+          <%= tag_post['answer'] %>
+        <% elsif tag_post['type'] == 'video' %>
+          <%= raw tag_post['player'][1]['embed_code'] %>
+        <% elsif tag_post['type'] == 'audio' %>
+          <%= raw CGI.unescapeHTML(tag_post['embed']) %>
+        <% elsif tag_post['type'] == 'photo' %>
+          <img src=<%= tag_post['photos'].first['alt_sizes'][2]['url'] %> />
+        <% elsif tag_post['type'] == 'chat' %>
+          <%= tag_post['body'] %>
+        <% end %>
       </span>
       <input type="button" value="Add" class="addFavorite">
     </li>

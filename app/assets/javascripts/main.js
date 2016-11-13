@@ -3,7 +3,7 @@ $(document).on('ready', function() {
     var $favorites = $('.favorites-container ul')
     var $selectedElement = $(event.target.parentElement)
     var $selectedInput = $(event.currentTarget)
-    var postInfo = $selectedElement.children('.post-info').text()
+    var postInfo = $selectedElement.children('.post-info')[0].innerHTML
     var id = $selectedElement.data('id')
     var removeButton = '<input type="button" value="Remove" class="removeFavorite"/>'
 
