@@ -1,0 +1,8 @@
+<ul>
+  <% @posts['posts'].each do |post| %>
+    <li>
+      <%= post['summary'] %>
+      <input type="button" value="Add" class="addFavorite">
+    </li>
+  <% end %>
+</ul>
