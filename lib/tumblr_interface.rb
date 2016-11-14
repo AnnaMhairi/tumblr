@@ -8,8 +8,4 @@ class TumblrInterface
       :oauth_token => 'Xd1WIfBGMtu7fZoqGmmK3nFzHDgOMBabCkxTHRVMSO8ViS5AfT',
       :oauth_token_secret => 'vW0PolSJjCNdzTIKX5xVJ8YiwrgV4pI0DqQDvQhsNTHGZvSMZT')
   end
-
-  def get_posts
-    @client.posts "etiolate"
-  end
 end

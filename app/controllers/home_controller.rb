@@ -4,7 +4,6 @@ class HomeController < ApplicationController
   require 'json'
 
   def main
-    @tumblr_client = self.client
   end
 
   def search
@@ -37,7 +36,6 @@ class HomeController < ApplicationController
   end
 
   def client
-    interface = ::TumblrInterface.new
-    @tumblr_client = interface.instance_variable_get(:@client)
+    ::TumblrInterface.new.instance_variable_get(:@client)
   end
 end
