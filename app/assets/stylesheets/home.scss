@@ -5,19 +5,37 @@
 body {
   display: flex;
   flex-direction: row;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 17px;
+  line-height: 1.42857143;
+  color: #605f5d;
+  overflow-x: auto;
+}
+
+h2, h4 {
+  color: #f79b60;
+  font-weight: 300;
+  margin-bottom: 10px;
 }
 
 .search-section {
-  border-right: 1px solid black;
+  border-right: 1px solid #9da3b3;
   flex-basis: 50%;
+  max-width: 50%;
 }
 
 .search-container {
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid #9da3b3;
+  padding: 20px 50px 50px 50px;
 }
 
 .favorites-container {
   flex-basis: 50%;
+  max-width: 50%;
+}
+
+.favorites-heading {
+  padding: 20px 50px 20px 50px;
 }
 
 #search-form {
@@ -31,29 +49,56 @@ body {
   flex-basis: 50%;
 }
 
+.blog-name input, .tag-name input {
+  width: 175px;
+  height: 20px;
+  font-size: 14px;
+  color: #9da3b3;
+}
+
 .submit {
-  margin-top: 15px;
+  margin-top: 20px;
+}
+
+.submit input {
+  background-color: #57bb89;
+  border-radius: 5px;
+  color: #fff;
+  border: none;
+  padding: 5px 15px;
+  width: 181px;
+  font-size: 12px;
 }
 
 .search-results-container, .favorites-results-container {
+  flex-basis: 100%;
   display: flex;
   flex-direction: row;
   justify-content: center;
+  overflow: auto;
 }
 
 .search-results-container li, .favorites-results-container li {
-  border: 1px solid black;
+  border: 1px solid #9da3b3;
   display: flex;
   flex-direction: row;
+  border-radius: 5px;
+  margin: 50px;
+}
+
+.post-search-results, .favorites-results-container ul {
+  overflow: auto;
 }
 
 ul {
   list-style: none;
   padding-left: 0;
+  margin: 0;
 }
 
 .post-info, .favorite-info {
   flex-basis: 75%;
+  overflow: auto;
 }
 
 .add-favorite, .remove-favorite {

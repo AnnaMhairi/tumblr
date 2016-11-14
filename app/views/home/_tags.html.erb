@@ -2,7 +2,6 @@
   <% @tags.each do |tag| %>
     <li data-id="<%= tag['id'] %>">
       <span class="post-info">
-        <%= tag['type'] %></br>
         <% if tag['type'] == 'text' %>
           <%= raw tag['title'] %></br>
           <%= raw tag['body'] %>

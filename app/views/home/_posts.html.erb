@@ -2,7 +2,6 @@
   <% @posts['posts'].each do |post| %>
     <li data-id="<%= post['id'] %>">
       <span class="post-info">
-        <%= post['type'] %></br>
         <% if post['type'] == 'text' %>
           <%= raw post['title'] %></br>
           <%= raw post['body'] %>

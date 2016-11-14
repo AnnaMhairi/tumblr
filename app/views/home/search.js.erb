@@ -1,7 +1,10 @@
 <% if @tag_posts.present? %>
+    $(".search-results-container").children().remove()
     $(".search-results-container").append("<%= escape_javascript("#{render :partial => 'tag_post', :locals => { :tag_posts => @tag_posts }}").html_safe %>")
 <% elsif @posts.present? %>
+    $(".search-results-container").children().remove()
     $(".search-results-container").append("<%= escape_javascript("#{render :partial => 'posts', :locals => { :posts => @posts }}").html_safe %>")
 <% elsif @tags.present? %>
+    $(".search-results-container").children().remove()
     $(".search-results-container").append("<%= escape_javascript("#{render :partial => 'tags', :locals => { :tags => @tags }}").html_safe %>")
 <% end %>
