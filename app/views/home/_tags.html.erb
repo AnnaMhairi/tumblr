@@ -2,26 +2,7 @@
   <% @tags.each do |tag| %>
     <li data-id="<%= tag['id'] %>">
       <span class="post-info">
-        <% if tag['type'] == 'text' %>
-          <%= raw tag['title'] %></br>
-          <%= raw tag['body'] %>
-        <% elsif tag['type'] == 'quote' %>
-          <%= raw tag['text'] %>
-        <% elsif tag['type'] == 'link' %>
-          <a href="<%= tag['url'] %>">
-            <%= tag['title'] %>
-          </a>
-        <% elsif tag['type'] == 'answer' %>
-          <%= tag['answer'] %>
-        <% elsif tag['type'] == 'video' %>
-          <%= raw tag['player'][1]['embed_code'] %>
-        <% elsif tag['type'] == 'audio' %>
-          <%= raw CGI.unescapeHTML(tag['embed']) %>
-        <% elsif tag['type'] == 'photo' %>
-          <img src=<%= tag['photos'].first['alt_sizes'][2]['url'] %> />
-        <% elsif tag['type'] == 'chat' %>
-          <%= tag['body'] %>
-        <% end %>
+        <%= render :partial => 'post_info', :locals => { :data => tag } %>
       </span>
       <input type="button" value="Add" class="add-favorite">
     </li>
