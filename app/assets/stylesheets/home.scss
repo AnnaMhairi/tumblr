@@ -18,6 +18,15 @@ h2, h4 {
   margin-bottom: 10px;
 }
 
+a {
+  text-decoration: none;
+  color: #605f5d;
+}
+
+a:hover {
+  color: #f79b60;
+}
+
 .search-section {
   border-right: 1px solid #9da3b3;
   flex-basis: 50%;
@@ -68,6 +77,7 @@ h2, h4 {
   padding: 5px 15px;
   width: 181px;
   font-size: 12px;
+  text-transform: uppercase;
 }
 
 .search-results-container, .favorites-results-container {
@@ -84,10 +94,12 @@ h2, h4 {
   flex-direction: row;
   border-radius: 5px;
   margin: 50px;
+  padding: 15px 0px 15px 35px;
 }
 
 .post-search-results, .favorites-results-container ul {
   overflow: auto;
+  flex-basis: 100%;
 }
 
 ul {
@@ -102,5 +114,21 @@ ul {
 }
 
 .add-favorite, .remove-favorite {
-  flex-basis: 25%;
+  border-radius: 5px;
+  color: #fff;
+  border: none;
+  padding: 5px 15px;
+  float: right;
+  width: 75px;
+  height: 30px;
+  margin-left: 20px;
+  text-transform: uppercase;
+}
+
+.add-favorite {
+  background-color: #57bb89;
+}
+
+.remove-favorite {
+  background-color: #f26c77;
 }

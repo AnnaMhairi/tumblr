@@ -10,6 +10,7 @@ $(document).on('ready', function() {
     if($favorites.find($("li[data-id=" + id + "]")).length == 0) {
       var html = '<li data-id="' + id + '"><span class="favorite-info">' + postInfo + '</span>' + removeButton + '</li>'
       $favorites.append(html)
+      $selectedInput.css('background-color', '#f0efeb')
       $selectedInput.prop('disabled', true);
     }
   })
@@ -21,6 +22,7 @@ $(document).on('ready', function() {
     var $searchResultInput = $search.find($('li[data-id='+ id +']')).children('.add-favorite')
 
     $selectedElement.remove()
+    $searchResultInput.css('background-color', '#57bb89')
     $searchResultInput.prop('disabled', false);
   })
 })
